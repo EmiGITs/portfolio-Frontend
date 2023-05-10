@@ -36,8 +36,16 @@
 
         </ul>
 
+<ng-container *ngIf="!token">
+  <a routerLink="/login"><button type="button" class="btn btn-light">Login</button></a>
+</ng-container>
 
-        <button type="button" class="btn btn-light">Login</button>
+        <ng-container *ngIf="token">
+          <a routerLink="/logout"> <button type="button" class="btn btn-light">Logout</button></a>
+        </ng-container>
+
+
+
       </form>
     </div>
   </div>

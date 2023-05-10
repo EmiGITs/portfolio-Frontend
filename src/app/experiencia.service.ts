@@ -8,7 +8,7 @@ import { Experiencia } from './experiencia';
 })
 export class ExperienciaService {
 
-  private baseUrl = "http://localhost:8000/experiencias";
+  private baseUrl = "http://localhost:8000/api/experiencias";
 
   constructor(private http: HttpClient) { }
 

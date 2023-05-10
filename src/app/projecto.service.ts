@@ -8,7 +8,7 @@ import { Projecto } from './projecto';
 })
 export class ProjectoService {
 
-  private baseUrl = "http://localhost:8000/projectos";
+  private baseUrl = "http://localhost:8000/api/projectos";
 
   constructor(private http: HttpClient) { }
 

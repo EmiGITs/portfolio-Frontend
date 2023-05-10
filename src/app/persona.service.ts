@@ -8,7 +8,7 @@ import { Persona } from './persona';
 })
 export class PersonaService {
 
-  private baseUrl = "http://localhost:8000/personas";
+  private baseUrl = "http://localhost:8000/api/personas";
 
   constructor(private http: HttpClient) { }
 

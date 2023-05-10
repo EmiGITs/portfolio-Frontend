@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  token: string;
+  ngOnInit(){
+    this.token = this.readLocalStorageValue('token');
+  }
 
+  readLocalStorageValue(key: string): string {
+    // @ts-ignore
+    return localStorage.getItem(key);
+  }
 }

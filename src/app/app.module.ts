@@ -12,6 +12,8 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { HttpClientModule } from '@angular/common/http';
     EducationComponent,
     SkillsComponent,
     ProjectsComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent
   ],
     imports: [
         BrowserModule,
         RouterOutlet,
         AppRoutingModule,
-      HttpClientModule,
+        HttpClientModule,
+        FormsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
