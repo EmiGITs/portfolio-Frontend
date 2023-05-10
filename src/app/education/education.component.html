@@ -10,15 +10,15 @@
 
         <ul class="list-group list-group-light">
 
-          <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+          <li class="list-group-item d-flex justify-content-between align-items-center border-0" *ngFor = "let educacion of educaciones">
 
             <div class="d-flex align-items-center">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ20TVnukR-oMzFOsLKtnTAmXqkOG3AiNeP6wDwWKkBl_Z04Xf0UQwRw5HENa5lQXffEtM&usqp=CAU" alt=""
+              <img src="https://cdn-icons-png.flaticon.com/512/167/167707.png" alt=""
                    class="rounded-circle list-item" />
               <div class="ms-3">
-                <p class="fw-bold mb-1">Universidad Caece</p>
-                <p class="text-muted mb-0">Licenciatura en Gestión de Sistemas y Negocios</p>
-                <p class="text-muted mb-1">Marzo 2021 - Actualidad</p>
+                <p class="fw-bold mb-1">{{ educacion.title }}</p>
+                <p class="text-muted mb-0">{{ educacion.subtitle }}</p>
+                <p class="text-muted mb-1">{{ educacion.startdate | date: 'yyyy'  }} - <span *ngIf="!educacion.enddate">Actualidad</span> <span *ngIf="educacion.enddate">{{ educacion.enddate | date: 'yyyy'  }}</span> </p>
               </div>
             </div>
             <i class="fa fa-edit" href="#" role="button"></i>

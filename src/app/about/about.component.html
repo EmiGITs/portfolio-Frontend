@@ -2,7 +2,7 @@
 
 <div class="sectionheader">
 <div class="container-fluid">
-  <div class="py-2">
+  <div class="py-2" *ngFor = "let persona of personas">
     <div class="row">
       <div class="col-md-12">
         <div class="fb-profile-block">
@@ -39,10 +39,10 @@
 </div>
     </div>
 
-    <div class="row">
+    <div class="row" >
       <div class="col-md-6">
         <div class="col col-md-12 d-flex justify-content-center justify-content-md-start">
-          <h3>Emiliano Dri</h3> <i class="fa fa-edit"></i>
+          <h3>{{ persona.title }}</h3> <i class="fa fa-edit"></i>
 
 
         </div>
@@ -50,12 +50,12 @@
 
 
         <div class="col col-md-12 d-flex justify-content-center justify-content-md-start">
-          <p>Programador Full-Stack</p>
+          <p>{{ persona.subtitle }}</p>
         </div>
 
 
         <div class="col col-md-12 d-flex justify-content-center justify-content-md-start">
-          <p>Buenos Aires (Argentina)</p>
+          <p>{{ persona.location }}</p>
         </div>
 
       </div>
@@ -63,7 +63,7 @@
         <i class="fa fa-edit"></i>
 
         <img style="width: 50px; height:50px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Escudo_del_C_A_River_Plate.svg/1200px-Escudo_del_C_A_River_Plate.svg.png" alt="">
-        <p style="margin-left: 5px">Universidad<br> CAECE</p>
+        <p style="margin-left: 5px">{{ persona.insignia }}</p>
 
 
 
@@ -84,7 +84,7 @@
         </div>
 
         <div class="col col-md-12 d-flex justify-content-center justify-content-md-start">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aliquam, dolores explicabo fuga modi natus nesciunt non porro sit. Ad earum esse expedita fugit laborum rem similique voluptate voluptatibus!</p>
+          <p>{{ persona.about }}</p>
         </div>
       </div>
 
