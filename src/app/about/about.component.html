@@ -7,12 +7,22 @@
       <div class="col-md-12">
         <div class="fb-profile-block">
 
-          <div class="fb-profile-block-thumb cover-container"></div>
 
-          <div class="profile-img">
-            <a href="#">
-              <img src="https://i.pinimg.com/474x/2f/fd/2a/2ffd2af47e1647ed1fe9cc3dd15aabc0.jpg" alt="" title="">
-            </a>
+
+          <div class="fb-profile-block-thumb image-upload">
+            <label for="image">
+              <img style="width: 2000px; height: 350px;" src="http://localhost:8000/media/view/encabezado.png"/>
+            </label>
+
+            <input *ngIf="_apiService.loggedIn()" type="file" id="image" class="form-control" accept="image/*" (change)="uploadEncabezado($event)">
+          </div>
+
+          <div class="profile-img image-upload">
+            <label for="imageprofile">
+              <img src="http://localhost:8000/media/view/profile.png" alt="" title="">
+            </label>
+
+            <input *ngIf="_apiService.loggedIn()" type="file" id="imageprofile" class="form-control" accept="image/*" (change)="uploadProfile($event)">
 
           </div>
 
@@ -59,10 +69,13 @@
         </div>
 
       </div>
-      <div class="col col-md-6 d-flex justify-content-center justify-content-md-end">
+      <div class="col col-md-6 d-flex justify-content-center justify-content-md-end image-upload">
 
+        <label  for="imageinsignia">
+          <img style="width: 50px; height:50px;" src="http://localhost:8000/media/view/insignia.png" alt="">
+        </label>
 
-        <img style="width: 50px; height:50px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Escudo_del_C_A_River_Plate.svg/1200px-Escudo_del_C_A_River_Plate.svg.png" alt="">
+        <input *ngIf="_apiService.loggedIn()" type="file" id="imageinsignia" class="form-control" accept="image/*" (change)="uploadInsignia($event)">
         <p style="margin-left: 5px">{{ persona.insignia }}</p>
 
 

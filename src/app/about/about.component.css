@@ -9,9 +9,17 @@
 
 }
 
+.image-upload>input {
+  display: none;
+}
+
+.image-upload{
+
+}
+
 .cover-container{
-  background: #030f1c;
-  border-radius: 10px;
+  background: url("http://localhost:8000/media/view/encabezado.png") no-repeat;
+  background-repeat: no-repeat;
 
 }
 .fb-profile-block-thumb{
@@ -25,7 +33,7 @@
 
   border-radius: 0 0 3px 3px;
 }
-.profile-img a{
+.profile-img label{
   bottom: 0px;
   box-shadow: none;
   display: block;

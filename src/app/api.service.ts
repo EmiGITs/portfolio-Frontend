@@ -46,4 +46,8 @@ export class ApiService {
     return localStorage.getItem('token');
   }
 
+  uploadFile(formData: FormData): Observable<any>{
+    return this.http.post('http://localhost:8000/media/api/upload', formData);
+  }
+
 }

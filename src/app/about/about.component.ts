@@ -37,6 +37,59 @@ export class AboutComponent implements OnInit{
       })
   }
 
+  upload(event: any){
+      const file = event.target.files[0];
+
+      if(file){
+        const formData = new FormData();
+        formData.append('file',file);
+
+        this._apiService.uploadFile(formData).subscribe(response => {
+          console.log("Subido "), response;
+        });
+      }
+  }
+
+  uploadEncabezado(event: any){
+    const file = event.target.files[0];
+
+    if(file){
+      const formData = new FormData();
+      formData.append('file',file, 'encabezado.png');
+
+      this._apiService.uploadFile(formData).subscribe(response => {
+        window.location.reload();
+      });
+    }
+  }
+
+
+  uploadProfile(event: any){
+    const file = event.target.files[0];
+
+    if(file){
+      const formData = new FormData();
+      formData.append('file',file, 'profile.png');
+
+      this._apiService.uploadFile(formData).subscribe(response => {
+        window.location.reload();
+      });
+    }
+  }
+
+  uploadInsignia(event: any){
+
+    const file = event.target.files[0];
+
+    if(file){
+      const formData = new FormData();
+      formData.append('file',file, 'insignia.png');
+
+      this._apiService.uploadFile(formData).subscribe(response => {
+       window.location.reload();
+      });
+    }
+  }
 
   private setPersonaList() {
     this.personaService.getPersonas().subscribe(x => {
