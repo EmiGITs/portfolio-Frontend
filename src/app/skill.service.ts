@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Skill } from './skill';
 
@@ -12,7 +12,15 @@ export class SkillService {
 
   constructor(private http: HttpClient) { }
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
+  };
+
   getSkills(): Observable<Skill[]>{
     return this.http.get<Skill[]>(`${this.baseUrl}`);
+  }
+
+  updateSkill(skillModel: Skill){
+    return this.http.patch(`${this.baseUrl}/${skillModel.id}/update`,skillModel, this.httpOptions)
   }
 }

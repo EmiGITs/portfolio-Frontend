@@ -21,7 +21,7 @@
                 <p class="text-muted mb-1">{{ educacion.startdate | date: 'yyyy'  }} - <span *ngIf="!educacion.enddate">Actualidad</span> <span *ngIf="educacion.enddate">{{ educacion.enddate | date: 'yyyy'  }}</span> </p>
               </div>
             </div>
-            <i class="fa fa-edit" href="#" role="button" *ngIf="_apiService.loggedIn()"></i>
+            <i class="fa fa-edit" href="#" role="button" *ngIf="_apiService.loggedIn()" (click)="editItem(educacion)"></i>
 
           </li>
 

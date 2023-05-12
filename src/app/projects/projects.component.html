@@ -20,7 +20,7 @@
                 <a class="text-muted mb-0" href="{{ projecto.link }}">Mas información</a>
               </div>
             </div>
-            <i class="fa fa-edit" href="#" role="button" *ngIf="_apiService.loggedIn()"></i>
+            <i class="fa fa-edit" href="#" role="button" *ngIf="_apiService.loggedIn()" (click)="editItem(projecto)"></i>
 
           </li>
 

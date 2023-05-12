@@ -11,9 +11,18 @@ import { EducationComponent } from './education/education.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { EditAboutComponent } from './PopUp/edit-about/edit-about.component';
+import {AuthInterceptor} from "./helpers/auth.interceptor";
+import { EditExperienciaComponent } from './PopUp/edit-experiencia/edit-experiencia.component';
+import { EditEducacionComponent } from './PopUp/edit-educacion/edit-educacion.component';
+import { EditSkillComponent } from './PopUp/edit-skill/edit-skill.component';
+import { EditProjectoComponent } from './PopUp/edit-projecto/edit-projecto.component';
+
+
 
 @NgModule({
   declarations: [
@@ -25,16 +34,27 @@ import {FormsModule} from "@angular/forms";
     SkillsComponent,
     ProjectsComponent,
     AboutComponent,
-    LoginComponent
+    LoginComponent,
+    EditAboutComponent,
+    EditExperienciaComponent,
+    EditEducacionComponent,
+    EditSkillComponent,
+    EditProjectoComponent
   ],
-    imports: [
-        BrowserModule,
-        RouterOutlet,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    RouterOutlet,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    NgbModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

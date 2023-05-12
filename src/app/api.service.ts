@@ -1,8 +1,9 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpResponse} from "@angular/common/http";
-import {map, pipe} from "rxjs";
+import {BehaviorSubject, map, Observable, pipe} from "rxjs";
 import {Credentials} from "./credentials";
 import {Router} from "@angular/router";
+import {Persona} from "./persona";
 
 
 @Injectable({

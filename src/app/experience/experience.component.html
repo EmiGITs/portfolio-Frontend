@@ -22,7 +22,7 @@
                 <p class="text-muted mb-1">{{ experiencia.location }}</p>
               </div>
             </div>
-            <i class="fa fa-edit" role="button"  *ngIf="_apiService.loggedIn()" ></i>
+            <i class="fa fa-edit" role="button"  *ngIf="_apiService.loggedIn()" (click)="editItem(experiencia)"></i>
 
           </li>
 
