@@ -8,7 +8,7 @@ import { Persona } from './persona';
 })
 export class PersonaService {
 
-  private baseUrl = "http://localhost:8000/api/personas";
+  private baseUrl = "https://portfolio-backend-production-748d.up.railway.app/api/personas";
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })

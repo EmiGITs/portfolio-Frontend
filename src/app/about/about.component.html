@@ -11,7 +11,7 @@
 
           <div class="fb-profile-block-thumb image-upload">
             <label for="image">
-              <img style="width: 2000px; height: 350px;" src="http://localhost:8000/media/view/encabezado.png"/>
+              <img style="width: 2000px; height: 350px;" src="https://portfolio-backend-production-748d.up.railway.app/media/view/encabezado.png"/>
             </label>
 
             <input *ngIf="_apiService.loggedIn()" type="file" id="image" class="form-control" accept="image/*" (change)="uploadEncabezado($event)">
@@ -19,7 +19,7 @@
 
           <div class="profile-img image-upload">
             <label for="imageprofile">
-              <img src="http://localhost:8000/media/view/profile.png" alt="" title="">
+              <img src="https://portfolio-backend-production-748d.up.railway.app/media/view/profile.png" alt="" title="">
             </label>
 
             <input *ngIf="_apiService.loggedIn()" type="file" id="imageprofile" class="form-control" accept="image/*" (change)="uploadProfile($event)">
@@ -72,7 +72,7 @@
       <div class="col col-md-6 d-flex justify-content-center justify-content-md-end image-upload">
 
         <label  for="imageinsignia">
-          <img style="width: 50px; height:50px;" src="http://localhost:8000/media/view/insignia.png" alt="">
+          <img style="width: 50px; height:50px;" src="https://portfolio-backend-production-748d.up.railway.app/media/view/insignia.png" alt="">
         </label>
 
         <input *ngIf="_apiService.loggedIn()" type="file" id="imageinsignia" class="form-control" accept="image/*" (change)="uploadInsignia($event)">

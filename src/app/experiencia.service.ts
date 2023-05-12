@@ -8,7 +8,7 @@ import { Experiencia } from './experiencia';
 })
 export class ExperienciaService {
 
-  private baseUrl = "http://localhost:8000/api/experiencias";
+  private baseUrl = "https://portfolio-backend-production-748d.up.railway.app/api/experiencias";
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })

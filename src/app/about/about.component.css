@@ -18,7 +18,7 @@
 }
 
 .cover-container{
-  background: url("http://localhost:8000/media/view/encabezado.png") no-repeat;
+  background: url("https://portfolio-backend-production-748d.up.railway.app/media/view/encabezado.png") no-repeat;
   background-repeat: no-repeat;
 
 }

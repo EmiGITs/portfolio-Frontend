@@ -8,7 +8,7 @@ import { Projecto } from './projecto';
 })
 export class ProjectoService {
 
-  private baseUrl = "http://localhost:8000/api/projectos";
+  private baseUrl = "https://portfolio-backend-production-748d.up.railway.app/api/projectos";
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })

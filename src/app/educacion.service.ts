@@ -8,7 +8,7 @@ import { Educacion } from './educacion';
 })
 export class EducacionService {
 
-  private baseUrl = "http://localhost:8000/api/educaciones";
+  private baseUrl = "https://portfolio-backend-production-748d.up.railway.app/api/educaciones";
 
 
 

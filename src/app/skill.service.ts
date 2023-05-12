@@ -8,7 +8,7 @@ import { Skill } from './skill';
 })
 export class SkillService {
 
-  private baseUrl = "http://localhost:8000/api/skills";
+  private baseUrl = "https://portfolio-backend-production-748d.up.railway.app/api/skills";
 
   constructor(private http: HttpClient) { }
 

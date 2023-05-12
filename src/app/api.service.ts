@@ -18,7 +18,7 @@ export class ApiService {
   }
 
   login(creds: Credentials){
-    return this.http.post('http://localhost:8000/login', creds, {
+    return this.http.post('https://portfolio-backend-production-748d.up.railway.app/login', creds, {
       observe: 'response'
     }).pipe(map((response: HttpResponse<any>) => {
       const body = response.body;
@@ -47,7 +47,7 @@ export class ApiService {
   }
 
   uploadFile(formData: FormData): Observable<any>{
-    return this.http.post('http://localhost:8000/media/api/upload', formData);
+    return this.http.post('https://portfolio-backend-production-748d.up.railway.app/media/api/upload', formData);
   }
 
 }
