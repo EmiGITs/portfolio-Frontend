@@ -27,7 +27,7 @@ export class SkillsComponent implements OnInit{
     ref.componentInstance.selectedSkill = skillModel;
 
     ref.result.then((yes) => {
-        window.location.reload();
+       this.setSkillsList();
 
 
       },
@@ -35,5 +35,17 @@ export class SkillsComponent implements OnInit{
         console.log("Cerrar modal");
 
       })
+  }
+
+
+  deleteItem(skillModel: Skill) {
+
+    this.skillService.deleteSkillById(skillModel.id).subscribe(x => this.setSkillsList());
+  }
+
+  private setSkillsList() {
+    this.skillService.getSkills().subscribe(x => {
+      this.skills = x;
+    })
   }
 }

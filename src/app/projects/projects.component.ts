@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit{
 
   ngOnInit(): void {
     this.projectoService.getProjectos().subscribe((data: Projecto[]) => {
-      console.log(data);
+
       this.projectos = data;
     });
   }
@@ -28,7 +28,7 @@ export class ProjectsComponent implements OnInit{
     ref.componentInstance.selectedProjecto = projectoModel;
 
     ref.result.then((yes) => {
-        window.location.reload();
+        this.setProjectosList();
 
 
       },
@@ -36,6 +36,17 @@ export class ProjectsComponent implements OnInit{
         console.log("Cerrar modal");
 
       })
+  }
+
+  deleteItem(projectoModel: Projecto) {
+
+    this.projectoService.deleteProjectoById(projectoModel.id).subscribe(x => this.setProjectosList());
+  }
+
+  private setProjectosList() {
+    this.projectoService.getProjectos().subscribe(x => {
+      this.projectos = x;
+    })
   }
 
 }

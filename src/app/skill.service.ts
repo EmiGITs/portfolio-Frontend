@@ -23,4 +23,9 @@ export class SkillService {
   updateSkill(skillModel: Skill){
     return this.http.patch(`${this.baseUrl}/${skillModel.id}/update`,skillModel, this.httpOptions)
   }
+
+  deleteSkillById(id: number) {
+
+    return this.http.delete(`${this.baseUrl}/${id}/delete`, this.httpOptions);
+  }
 }

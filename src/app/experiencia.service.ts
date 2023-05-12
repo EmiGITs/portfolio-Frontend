@@ -23,4 +23,9 @@ export class ExperienciaService {
   updateExperiencia(experienciaModel: Experiencia){
     return this.http.patch(`${this.baseUrl}/${experienciaModel.id}/update`,experienciaModel, this.httpOptions)
   }
+
+  deleteExperienciaById(id: number) {
+
+    return this.http.delete(`${this.baseUrl}/${id}/delete`, this.httpOptions);
+  }
 }

@@ -27,7 +27,7 @@ export class AboutComponent implements OnInit{
     ref.componentInstance.selectedPersona = personaModel;
 
     ref.result.then((yes) => {
-        window.location.reload();
+        this.setPersonaList();
 
 
       },
@@ -35,5 +35,12 @@ export class AboutComponent implements OnInit{
         console.log("Cerrar modal");
 
       })
+  }
+
+
+  private setPersonaList() {
+    this.personaService.getPersonas().subscribe(x => {
+      this.personas = x;
+    })
   }
 }

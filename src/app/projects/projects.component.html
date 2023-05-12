@@ -15,12 +15,16 @@
             <div class="d-flex align-items-center">
 
               <div class="ms-3">
+                <i class="fa fa-edit" role="button"  *ngIf="_apiService.loggedIn()" (click)="editItem(projecto)"></i>
                 <p class="fw-bold  mb-1">{{ projecto.title }}</p>
                 <p class="text-muted mb-0">{{ projecto.description }}</p>
                 <a class="text-muted mb-0" href="{{ projecto.link }}">Mas información</a>
               </div>
             </div>
-            <i class="fa fa-edit" href="#" role="button" *ngIf="_apiService.loggedIn()" (click)="editItem(projecto)"></i>
+            <div class="d-flex align-items-center">
+
+              <i class="fa fa-trash" role="button" *ngIf="_apiService.loggedIn()" (click)="deleteItem(projecto)"></i>
+            </div>
 
           </li>
 

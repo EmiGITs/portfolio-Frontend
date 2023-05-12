@@ -27,7 +27,7 @@ export class EducationComponent implements OnInit{
     ref.componentInstance.selectedEducacion = educacionModel;
 
     ref.result.then((yes) => {
-        window.location.reload();
+        this.setEducacionList();
 
 
       },
@@ -35,5 +35,16 @@ export class EducationComponent implements OnInit{
         console.log("Cerrar modal");
 
       })
+  }
+
+  deleteItem(educacionModel: Educacion) {
+
+    this.educacionService.deleteEducacionById(educacionModel.id).subscribe(x => this.setEducacionList());
+  }
+
+  private setEducacionList() {
+    this.educacionService.getEducaciones().subscribe(x => {
+      this.educaciones = x;
+    })
   }
 }

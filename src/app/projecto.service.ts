@@ -23,4 +23,9 @@ export class ProjectoService {
   updateProjecto(projectoModel: Projecto){
     return this.http.patch(`${this.baseUrl}/${projectoModel.id}/update`,projectoModel, this.httpOptions)
   }
+
+  deleteProjectoById(id: number) {
+
+    return this.http.delete(`${this.baseUrl}/${id}/delete`, this.httpOptions);
+  }
 }

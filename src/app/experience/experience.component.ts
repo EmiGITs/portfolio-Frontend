@@ -28,7 +28,7 @@ export class ExperienceComponent implements OnInit{
     ref.componentInstance.selectedExperiencia = experienciaModel;
 
     ref.result.then((yes) => {
-        window.location.reload();
+        this.setExperienciasList();
 
 
       },
@@ -36,6 +36,18 @@ export class ExperienceComponent implements OnInit{
         console.log("Cerrar modal");
 
       })
+  }
+
+
+  deleteItem(experienciaModel: Experiencia) {
+
+    this.experienciaService.deleteExperienciaById(experienciaModel.id).subscribe(x => this.setExperienciasList());
+  }
+
+  private setExperienciasList() {
+    this.experienciaService.getExperiencias().subscribe(x => {
+      this.experiencias = x;
+    })
   }
 
 }
