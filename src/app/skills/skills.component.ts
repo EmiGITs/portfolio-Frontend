@@ -4,6 +4,7 @@ import {SkillService} from "../skill.service";
 import {ApiService} from "../api.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {EditSkillComponent} from "../PopUp/edit-skill/edit-skill.component";
+import {CreateSkillComponent} from "../PopUp/create-skill/create-skill.component";
 
 @Component({
   selector: 'app-skills',
@@ -41,6 +42,22 @@ export class SkillsComponent implements OnInit{
   deleteItem(skillModel: Skill) {
 
     this.skillService.deleteSkillById(skillModel.id).subscribe(x => this.setSkillsList());
+  }
+
+  createItem() {
+
+    const ref = this.modalService.open(CreateSkillComponent, { centered: true });
+
+
+    ref.result.then((yes) => {
+        this.setSkillsList();
+
+
+      },
+      (cancel) => {
+        console.log("Cerrar modal");
+
+      })
   }
 
   private setSkillsList() {

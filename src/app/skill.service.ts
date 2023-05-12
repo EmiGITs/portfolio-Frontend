@@ -28,4 +28,9 @@ export class SkillService {
 
     return this.http.delete(`${this.baseUrl}/${id}/delete`, this.httpOptions);
   }
+
+  createSkill(skillModel: Skill) {
+
+    return this.http.post(`${this.baseUrl}/create`,skillModel, this.httpOptions);
+  }
 }

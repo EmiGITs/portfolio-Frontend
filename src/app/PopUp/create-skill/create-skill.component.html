@@ -1,0 +1,52 @@
+<div class="modal-header bg-primary text-white">
+  <h4 class="modal-title" id="modal-basic-title">Crear Experiencia</h4>
+</div>
+<div class="modal-body">
+  <form [formGroup]="createForm"  (ngSubmit)="onSubmit()" *ngIf="createForm">
+    <div class="form-group row d-flex justify-content-center align-items-center">
+      <label for="title" class="col-form-label col-sm-2 text-right">Titulo:</label>
+      <div class="col-sm-8">
+        <input type="text" formControlName="title" class="form-control" />
+        <div *ngIf="createFormData['title'].invalid && (createFormData['title'].dirty || createFormData['title'].touched)"
+             class="alert-danger">
+          <span>El titulo es necesario!</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row d-flex justify-content-center align-items-center">
+      <label for="total" class="col-form-label col-sm-2 text-right">Progreso:</label>
+      <div class="col-sm-8">
+        <input type="text" formControlName="total" class="form-control" />
+        <div *ngIf="createFormData['total'].invalid && (createFormData['total'].dirty || createFormData['total'].touched)"
+             class="alert-danger">
+          <span>El progreso es necesario!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row d-flex justify-content-center align-items-center">
+      <label for="description" class="col-form-label col-sm-2 text-right">Descripción:</label>
+      <div class="col-sm-8">
+        <input type="text" formControlName="description" class="form-control" />
+        <div *ngIf="createFormData['description'].invalid && (createFormData['description'].dirty || createFormData['description'].touched)"
+             class="alert-danger">
+          <span>La descripción es necesaria!</span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="modal-footer">
+      <button [disabled]="isLoading" class="btn btn-primary mr-2" (click)="modal.close('Cancel')">Cancelar</button>
+      <button [disabled]="isLoading" class="btn btn-primary mr-2">Crear</button>
+    </div>
+
+  </form>
+</div>
+

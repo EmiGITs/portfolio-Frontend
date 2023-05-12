@@ -31,4 +31,9 @@ export class EducacionService {
 
     return this.http.delete(`${this.baseUrl}/${id}/delete`, this.httpOptions);
   }
+
+  createEducacion(educacionModel: Educacion) {
+
+    return this.http.post(`${this.baseUrl}/create`,educacionModel, this.httpOptions);
+  }
 }

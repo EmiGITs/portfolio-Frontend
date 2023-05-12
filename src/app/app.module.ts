@@ -21,6 +21,10 @@ import { EditExperienciaComponent } from './PopUp/edit-experiencia/edit-experien
 import { EditEducacionComponent } from './PopUp/edit-educacion/edit-educacion.component';
 import { EditSkillComponent } from './PopUp/edit-skill/edit-skill.component';
 import { EditProjectoComponent } from './PopUp/edit-projecto/edit-projecto.component';
+import { CreateExperienciaComponent } from './PopUp/create-experiencia/create-experiencia.component';
+import { CreateEducacionComponent } from './PopUp/create-educacion/create-educacion.component';
+import { CreateSkillComponent } from './PopUp/create-skill/create-skill.component';
+import { CreateProjectoComponent } from './PopUp/create-projecto/create-projecto.component';
 
 
 
@@ -39,7 +43,11 @@ import { EditProjectoComponent } from './PopUp/edit-projecto/edit-projecto.compo
     EditExperienciaComponent,
     EditEducacionComponent,
     EditSkillComponent,
-    EditProjectoComponent
+    EditProjectoComponent,
+    CreateExperienciaComponent,
+    CreateEducacionComponent,
+    CreateSkillComponent,
+    CreateProjectoComponent
   ],
   imports: [
     BrowserModule,

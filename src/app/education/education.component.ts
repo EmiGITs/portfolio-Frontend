@@ -4,6 +4,7 @@ import {EducacionService} from "../educacion.service";
 import {ApiService} from "../api.service";
 import {EditEducacionComponent} from "../PopUp/edit-educacion/edit-educacion.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {CreateEducacionComponent} from "../PopUp/create-educacion/create-educacion.component";
 
 @Component({
   selector: 'app-education',
@@ -40,6 +41,22 @@ export class EducationComponent implements OnInit{
   deleteItem(educacionModel: Educacion) {
 
     this.educacionService.deleteEducacionById(educacionModel.id).subscribe(x => this.setEducacionList());
+  }
+
+  createItem() {
+
+    const ref = this.modalService.open(CreateEducacionComponent, { centered: true });
+
+
+    ref.result.then((yes) => {
+        this.setEducacionList();
+
+
+      },
+      (cancel) => {
+        console.log("Cerrar modal");
+
+      })
   }
 
   private setEducacionList() {

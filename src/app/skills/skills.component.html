@@ -1,5 +1,5 @@
 <section class=" py-5 py-xl-6">
-  <h3>Hard Skills & Soft Skills</h3> <i class="fa fa-plus" href="#" role="button" *ngIf="_apiService.loggedIn()"></i>
+  <h3>Hard Skills & Soft Skills</h3> <i class="fa fa-plus" role="button"  *ngIf="_apiService.loggedIn()" (click)="createItem()"></i>
   <div class="container overflow-hidden" >
     <div class="row justify-content-xl-center gy-3 gy-sm-4" >
       <div class="col-12 col-sm-6 col-xl-5" *ngFor = "let skill of skills">

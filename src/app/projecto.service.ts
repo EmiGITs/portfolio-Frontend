@@ -28,4 +28,9 @@ export class ProjectoService {
 
     return this.http.delete(`${this.baseUrl}/${id}/delete`, this.httpOptions);
   }
+
+  createProjecto(projectoModel: Projecto) {
+
+    return this.http.post(`${this.baseUrl}/create`,projectoModel, this.httpOptions);
+  }
 }

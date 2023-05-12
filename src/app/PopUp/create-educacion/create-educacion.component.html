@@ -1,13 +1,13 @@
 <div class="modal-header bg-primary text-white">
-  <h4 class="modal-title" id="modal-basic-title">Actualizar Experiencia</h4>
+  <h4 class="modal-title" id="modal-basic-title">Crear Educacion</h4>
 </div>
 <div class="modal-body">
-  <form [formGroup]="editForm"  (ngSubmit)="onSubmit()" *ngIf="editForm">
+  <form [formGroup]="createForm"  (ngSubmit)="onSubmit()" *ngIf="createForm">
     <div class="form-group row d-flex justify-content-center align-items-center">
       <label for="title" class="col-form-label col-sm-2 text-right">Titulo:</label>
       <div class="col-sm-8">
         <input type="text" formControlName="title" class="form-control" />
-        <div *ngIf="editFormData['title'].invalid && (editFormData['title'].dirty || editFormData['title'].touched)"
+        <div *ngIf="createFormData['title'].invalid && (createFormData['title'].dirty || createFormData['title'].touched)"
              class="alert-danger">
           <span>El titulo es necesario!</span>
         </div>
@@ -18,20 +18,9 @@
       <label for="subtitle" class="col-form-label col-sm-2 text-right">Subtitulo:</label>
       <div class="col-sm-8">
         <input type="text" formControlName="subtitle" class="form-control" />
-        <div *ngIf="editFormData['subtitle'].invalid && (editFormData['subtitle'].dirty || editFormData['subtitle'].touched)"
+        <div *ngIf="createFormData['subtitle'].invalid && (createFormData['subtitle'].dirty || createFormData['subtitle'].touched)"
              class="alert-danger">
           <span>El subtitulo es necesario!</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group row d-flex justify-content-center align-items-center">
-      <label for="location" class="col-form-label col-sm-2 text-right">Ubicación:</label>
-      <div class="col-sm-8">
-        <input type="text" formControlName="location" class="form-control" />
-        <div *ngIf="editFormData['location'].invalid && (editFormData['location'].dirty || editFormData['location'].touched)"
-             class="alert-danger">
-          <span>La ubicación es necesaria!</span>
         </div>
       </div>
     </div>
@@ -40,7 +29,7 @@
       <label for="startdate" class="col-form-label col-sm-2 text-right">Fecha de inicio:</label>
       <div class="col-sm-8">
         <input type="text" formControlName="startdate" class="form-control" />
-        <div *ngIf="editFormData['startdate'].invalid && (editFormData['startdate'].dirty || editFormData['startdate'].touched)"
+        <div *ngIf="createFormData['startdate'].invalid && (createFormData['startdate'].dirty || createFormData['startdate'].touched)"
              class="alert-danger">
           <span>La fecha inicial es necesaria!</span>
         </div>
@@ -61,7 +50,7 @@
 
     <div class="modal-footer">
       <button [disabled]="isLoading" class="btn btn-primary mr-2" (click)="modal.close('Cancel')">Cancelar</button>
-      <button [disabled]="isLoading" class="btn btn-primary mr-2">Actualizar</button>
+      <button [disabled]="isLoading" class="btn btn-primary mr-2">Crear</button>
     </div>
 
   </form>

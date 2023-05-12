@@ -4,6 +4,7 @@ import { ExperienciaService } from '../experiencia.service';
 import {ApiService} from "../api.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {EditExperienciaComponent} from "../PopUp/edit-experiencia/edit-experiencia.component";
+import {CreateExperienciaComponent} from "../PopUp/create-experiencia/create-experiencia.component";
 
 @Component({
   selector: 'app-experience',
@@ -26,6 +27,22 @@ export class ExperienceComponent implements OnInit{
 
     const ref = this.modalService.open(EditExperienciaComponent, { centered: true });
     ref.componentInstance.selectedExperiencia = experienciaModel;
+
+    ref.result.then((yes) => {
+        this.setExperienciasList();
+
+
+      },
+      (cancel) => {
+        console.log("Cerrar modal");
+
+      })
+  }
+
+  createItem() {
+
+    const ref = this.modalService.open(CreateExperienciaComponent, { centered: true });
+
 
     ref.result.then((yes) => {
         this.setExperienciasList();

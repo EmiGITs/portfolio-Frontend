@@ -28,4 +28,9 @@ export class ExperienciaService {
 
     return this.http.delete(`${this.baseUrl}/${id}/delete`, this.httpOptions);
   }
+
+  createExperiencia(experienciaModel: Experiencia) {
+
+    return this.http.post(`${this.baseUrl}/create`,experienciaModel, this.httpOptions);
+  }
 }
