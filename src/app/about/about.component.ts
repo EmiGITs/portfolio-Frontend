@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Persona} from "../persona";
 import {PersonaService} from "../persona.service";
+import {ApiService} from "../api.service";
 
 @Component({
   selector: 'app-about',
@@ -9,7 +10,7 @@ import {PersonaService} from "../persona.service";
 })
 export class AboutComponent implements OnInit{
   personas: Persona[];
-  constructor(private personaService: PersonaService) {
+  constructor(private personaService: PersonaService, public _apiService: ApiService) {
   }
 
   ngOnInit(): void {

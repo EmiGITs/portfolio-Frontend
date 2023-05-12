@@ -42,7 +42,7 @@
     <div class="row" >
       <div class="col-md-6">
         <div class="col col-md-12 d-flex justify-content-center justify-content-md-start">
-          <h3>{{ persona.title }}</h3> <i class="fa fa-edit"></i>
+          <h3>{{ persona.title }}</h3> <i class="fa fa-edit" *ngIf="_apiService.loggedIn()"></i>
 
 
         </div>
@@ -60,7 +60,7 @@
 
       </div>
       <div class="col col-md-6 d-flex justify-content-center justify-content-md-end">
-        <i class="fa fa-edit"></i>
+
 
         <img style="width: 50px; height:50px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Escudo_del_C_A_River_Plate.svg/1200px-Escudo_del_C_A_River_Plate.svg.png" alt="">
         <p style="margin-left: 5px">{{ persona.insignia }}</p>
@@ -78,7 +78,7 @@
     <div class="row">
       <div class="col-md-6">
         <div class="col col-md-12 d-flex justify-content-center justify-content-md-start">
-          <h3>Acerca de</h3> <i class="fa fa-edit"></i>
+          <h3>Acerca de</h3> <i class="fa fa-edit" *ngIf="_apiService.loggedIn()"        ></i>
 
 
         </div>

@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpResponse} from "@angular/common/http";
 import {map, pipe} from "rxjs";
 import {Credentials} from "./credentials";
+import {Router} from "@angular/router";
 
 
 @Injectable({
@@ -10,7 +11,8 @@ import {Credentials} from "./credentials";
 export class ApiService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private _router: Router
   ) {
   }
 
@@ -27,6 +29,15 @@ export class ApiService {
       localStorage.setItem('token',token);
       return body;
     }))
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    window.location.reload();
+  }
+
+  loggedIn(){
+    return !!localStorage.getItem('token');
   }
 
 

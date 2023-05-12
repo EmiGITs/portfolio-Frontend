@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Projecto} from "../projecto";
 import {ProjectoService} from "../projecto.service";
+import {ApiService} from "../api.service";
 
 @Component({
   selector: 'app-projects',
@@ -9,7 +10,7 @@ import {ProjectoService} from "../projecto.service";
 })
 export class ProjectsComponent implements OnInit{
   projectos: Projecto[];
-  constructor(private projectoService: ProjectoService) {
+  constructor(private projectoService: ProjectoService, public _apiService: ApiService) {
   }
 
   ngOnInit(): void {

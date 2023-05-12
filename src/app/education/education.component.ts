@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Educacion} from "../educacion";
 import {EducacionService} from "../educacion.service";
+import {ApiService} from "../api.service";
 
 @Component({
   selector: 'app-education',
@@ -9,7 +10,7 @@ import {EducacionService} from "../educacion.service";
 })
 export class EducationComponent implements OnInit{
   educaciones: Educacion[];
-  constructor(private educacionService: EducacionService) {
+  constructor(private educacionService: EducacionService, public _apiService: ApiService) {
   }
 
   ngOnInit(): void {

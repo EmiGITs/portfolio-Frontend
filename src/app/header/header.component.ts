@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ApiService} from "../api.service";
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   token: string;
-  ngOnInit(){
-    this.token = this.readLocalStorageValue('token');
-  }
 
-  readLocalStorageValue(key: string): string {
-    // @ts-ignore
-    return localStorage.getItem(key);
-  }
+
+  constructor(public _apiService: ApiService){}
 }

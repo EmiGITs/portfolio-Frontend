@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Experiencia} from "../experiencia";
 import { ExperienciaService } from '../experiencia.service';
+import {ApiService} from "../api.service";
 
 @Component({
   selector: 'app-experience',
@@ -9,7 +10,7 @@ import { ExperienciaService } from '../experiencia.service';
 })
 export class ExperienceComponent implements OnInit{
   experiencias: Experiencia[];
-  constructor(private experienciaService: ExperienciaService) {
+  constructor(private experienciaService: ExperienciaService, public _apiService: ApiService) {
   }
 
   ngOnInit(): void {

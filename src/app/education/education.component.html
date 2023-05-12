@@ -4,7 +4,7 @@
 
       <div class="col-md-12">
         <h3>Educación</h3>
-        <i class="fa fa-plus"></i>
+        <i class="fa fa-plus" *ngIf="_apiService.loggedIn()"></i>
 
 
 
@@ -21,7 +21,7 @@
                 <p class="text-muted mb-1">{{ educacion.startdate | date: 'yyyy'  }} - <span *ngIf="!educacion.enddate">Actualidad</span> <span *ngIf="educacion.enddate">{{ educacion.enddate | date: 'yyyy'  }}</span> </p>
               </div>
             </div>
-            <i class="fa fa-edit" href="#" role="button"></i>
+            <i class="fa fa-edit" href="#" role="button" *ngIf="_apiService.loggedIn()"></i>
 
           </li>
 

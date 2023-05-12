@@ -36,12 +36,12 @@
 
         </ul>
 
-<ng-container *ngIf="!token">
+<ng-container *ngIf="!_apiService.loggedIn()">
   <a routerLink="/login"><button type="button" class="btn btn-light">Login</button></a>
 </ng-container>
 
-        <ng-container *ngIf="token">
-          <a routerLink="/logout"> <button type="button" class="btn btn-light">Logout</button></a>
+        <ng-container *ngIf="_apiService.loggedIn()">
+          <a> <button type="button" class="btn btn-light" (click)="_apiService.logout()" >Logout</button></a>
         </ng-container>
 
 
